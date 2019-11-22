@@ -50,15 +50,14 @@ contract LoanRequest {
       emit CancelRequest(msg.sender, id, requests[id].loanType, requests[id].amount);
       return true;
   }
-  function myRequests() external view isRequester returns(uint256[] memory out){
-      uint256[] memory _array = requesters[msg.sender].requests;
-      out = new uint[](_array.length);
-      for (uint i = 0; i < _array.length; i++) {
-            out[i] = _array[i];
-      }
-      return _array;
+  function numOfMyRequests() external view isRequester returns(uint256){
+      return requesters[msg.sender].requests.length;
   }
-  function allRequestsLength() external view returns(uint256){
+  function myRequestAt(uint256 id) external view returns(uint256, address, string memory, uint256, bool, uint256){
+      uint256 idx = requesters[msg.sender].requests[id];
+      return (idx, requests[idx].requester, requests[idx].loanType, requests[idx].amount, requests[idx].isActive, requests[idx].timestamp);
+  }
+  function numOfAllRequests() external view returns(uint256){
       return requests.length;
   }
   function requestAt(uint256 id) external view returns(address, string memory, uint256, bool, uint256){
