@@ -63,5 +63,4 @@ contract LoanRequest {
   function requestAt(uint256 id) external view returns(address, string memory, uint256, bool, uint256){
       return (requests[id].requester, requests[id].loanType, requests[id].amount, requests[id].isActive, requests[id].timestamp);
   }
-  
 }
