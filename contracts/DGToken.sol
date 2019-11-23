@@ -8,6 +8,7 @@ contract DGToken is IERC20, IDGToken {
     mapping (address => mapping (address => uint256)) private _allowances;
     uint256 private _totalSupply;
     address public minter;
+    uint256 fee = 20000;
 
     function totalSupply() public view returns (uint256) {
         return _totalSupply;
@@ -21,8 +22,13 @@ contract DGToken is IERC20, IDGToken {
         return _balances[account];
     }
     
-    function payFee(uint256 amount) external returns (bool) {
-        _transfer(msg.sender, minter, amount);
+    function payFee() public returns (bool) {
+        _transfer(msg.sender, minter, fee);
+        return true;
+    }
+
+    function _returnFee(address recipient) internal returns (bool) {
+        _transfer(minter, recipient, fee);
         return true;
     }
 

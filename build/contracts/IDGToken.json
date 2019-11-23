@@ -17,12 +17,7 @@
     },
     {
       "constant": false,
-      "inputs": [
-        {
-          "name": "amount",
-          "type": "uint256"
-        }
-      ],
+      "inputs": [],
       "name": "payFee",
       "outputs": [
         {
@@ -35,25 +30,25 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":true,\"inputs\":[],\"name\":\"myBalance\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"payFee\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/fronky/blockchain/flow-wize-blockchain/contracts/IDGToken.sol\":\"IDGToken\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/fronky/blockchain/flow-wize-blockchain/contracts/IDGToken.sol\":{\"keccak256\":\"0x5777d8485070b90c9374a18625f58e44f265fdf53e57848c6ee6ec4c42e657f4\",\"urls\":[\"bzzr://022d46024ecb7252c0effd5d9a6f920f89ead858502555e8891454355a0c9e13\"]}},\"version\":1}",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.8+commit.23d335f2\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"constant\":false,\"inputs\":[],\"name\":\"payFee\",\"outputs\":[{\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[],\"name\":\"myBalance\",\"outputs\":[{\"name\":\"\",\"type\":\"uint256\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/fronky/blockchain/flow-wize-blockchain/contracts/IDGToken.sol\":\"IDGToken\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/fronky/blockchain/flow-wize-blockchain/contracts/IDGToken.sol\":{\"keccak256\":\"0x8a775c25be9ae7245b84533f6638c18b01c78130058c8148d78f28992600296f\",\"urls\":[\"bzzr://96c1e4cfaef17545cb0e76aeaba2c138ac1ecbcf3478ec811b07bf463495b349\"]}},\"version\":1}",
   "bytecode": "0x",
   "deployedBytecode": "0x",
   "sourceMap": "",
   "deployedSourceMap": "",
-  "source": "pragma solidity ^0.5.0;\n\ninterface IDGToken{\n  function myBalance() external view returns(uint256);\n  function payFee(uint amount) external returns (bool);\n}\n",
+  "source": "pragma solidity ^0.5.0;\n\ninterface IDGToken{\n  function myBalance() external view returns(uint256);\n  function payFee() external returns (bool);\n}\n",
   "sourcePath": "/Users/fronky/blockchain/flow-wize-blockchain/contracts/IDGToken.sol",
   "ast": {
     "absolutePath": "/Users/fronky/blockchain/flow-wize-blockchain/contracts/IDGToken.sol",
     "exportedSymbols": {
       "IDGToken": [
-        410
+        964
       ]
     },
-    "id": 411,
+    "id": 965,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 397,
+        "id": 953,
         "literals": [
           "solidity",
           "^",
@@ -61,7 +56,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:1"
+        "src": "0:23:3"
       },
       {
         "baseContracts": [],
@@ -69,9 +64,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 410,
+        "id": 964,
         "linearizedBaseContracts": [
-          410
+          964
         ],
         "name": "IDGToken",
         "nodeType": "ContractDefinition",
@@ -79,29 +74,29 @@
           {
             "body": null,
             "documentation": null,
-            "id": 402,
+            "id": 958,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "myBalance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 398,
+              "id": 954,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "65:2:1"
+              "src": "65:2:3"
             },
             "returnParameters": {
-              "id": 401,
+              "id": 957,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 400,
+                  "id": 956,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "90:7:1",
+                  "scope": 958,
+                  "src": "90:7:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -109,10 +104,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 399,
+                    "id": 955,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "90:7:1",
+                    "src": "90:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -122,10 +117,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "89:9:1"
+              "src": "89:9:3"
             },
-            "scope": 410,
-            "src": "47:52:1",
+            "scope": 964,
+            "src": "47:52:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -133,56 +128,29 @@
           {
             "body": null,
             "documentation": null,
-            "id": 409,
+            "id": 963,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "payFee",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 405,
+              "id": 959,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 404,
-                  "name": "amount",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 409,
-                  "src": "118:11:1",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 403,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "118:4:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "117:13:1"
+              "parameters": [],
+              "src": "117:2:3"
             },
             "returnParameters": {
-              "id": 408,
+              "id": 962,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 407,
+                  "id": 961,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 409,
-                  "src": "149:4:1",
+                  "scope": 963,
+                  "src": "138:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -190,10 +158,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 406,
+                    "id": 960,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "149:4:1",
+                    "src": "138:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -203,33 +171,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "148:6:1"
+              "src": "137:6:3"
             },
-            "scope": 410,
-            "src": "102:53:1",
+            "scope": 964,
+            "src": "102:42:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 411,
-        "src": "25:132:1"
+        "scope": 965,
+        "src": "25:121:3"
       }
     ],
-    "src": "0:158:1"
+    "src": "0:147:3"
   },
   "legacyAST": {
     "absolutePath": "/Users/fronky/blockchain/flow-wize-blockchain/contracts/IDGToken.sol",
     "exportedSymbols": {
       "IDGToken": [
-        410
+        964
       ]
     },
-    "id": 411,
+    "id": 965,
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 397,
+        "id": 953,
         "literals": [
           "solidity",
           "^",
@@ -237,7 +205,7 @@
           ".0"
         ],
         "nodeType": "PragmaDirective",
-        "src": "0:23:1"
+        "src": "0:23:3"
       },
       {
         "baseContracts": [],
@@ -245,9 +213,9 @@
         "contractKind": "interface",
         "documentation": null,
         "fullyImplemented": false,
-        "id": 410,
+        "id": 964,
         "linearizedBaseContracts": [
-          410
+          964
         ],
         "name": "IDGToken",
         "nodeType": "ContractDefinition",
@@ -255,29 +223,29 @@
           {
             "body": null,
             "documentation": null,
-            "id": 402,
+            "id": 958,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "myBalance",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 398,
+              "id": 954,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "65:2:1"
+              "src": "65:2:3"
             },
             "returnParameters": {
-              "id": 401,
+              "id": 957,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 400,
+                  "id": 956,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 402,
-                  "src": "90:7:1",
+                  "scope": 958,
+                  "src": "90:7:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -285,10 +253,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 399,
+                    "id": 955,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "90:7:1",
+                    "src": "90:7:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -298,10 +266,10 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "89:9:1"
+              "src": "89:9:3"
             },
-            "scope": 410,
-            "src": "47:52:1",
+            "scope": 964,
+            "src": "47:52:3",
             "stateMutability": "view",
             "superFunction": null,
             "visibility": "external"
@@ -309,56 +277,29 @@
           {
             "body": null,
             "documentation": null,
-            "id": 409,
+            "id": 963,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "payFee",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 405,
+              "id": 959,
               "nodeType": "ParameterList",
-              "parameters": [
-                {
-                  "constant": false,
-                  "id": 404,
-                  "name": "amount",
-                  "nodeType": "VariableDeclaration",
-                  "scope": 409,
-                  "src": "118:11:1",
-                  "stateVariable": false,
-                  "storageLocation": "default",
-                  "typeDescriptions": {
-                    "typeIdentifier": "t_uint256",
-                    "typeString": "uint256"
-                  },
-                  "typeName": {
-                    "id": 403,
-                    "name": "uint",
-                    "nodeType": "ElementaryTypeName",
-                    "src": "118:4:1",
-                    "typeDescriptions": {
-                      "typeIdentifier": "t_uint256",
-                      "typeString": "uint256"
-                    }
-                  },
-                  "value": null,
-                  "visibility": "internal"
-                }
-              ],
-              "src": "117:13:1"
+              "parameters": [],
+              "src": "117:2:3"
             },
             "returnParameters": {
-              "id": 408,
+              "id": 962,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 407,
+                  "id": 961,
                   "name": "",
                   "nodeType": "VariableDeclaration",
-                  "scope": 409,
-                  "src": "149:4:1",
+                  "scope": 963,
+                  "src": "138:4:3",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -366,10 +307,10 @@
                     "typeString": "bool"
                   },
                   "typeName": {
-                    "id": 406,
+                    "id": 960,
                     "name": "bool",
                     "nodeType": "ElementaryTypeName",
-                    "src": "149:4:1",
+                    "src": "138:4:3",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
@@ -379,20 +320,20 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "148:6:1"
+              "src": "137:6:3"
             },
-            "scope": 410,
-            "src": "102:53:1",
+            "scope": 964,
+            "src": "102:42:3",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "external"
           }
         ],
-        "scope": 411,
-        "src": "25:132:1"
+        "scope": 965,
+        "src": "25:121:3"
       }
     ],
-    "src": "0:158:1"
+    "src": "0:147:3"
   },
   "compiler": {
     "name": "solc",
@@ -400,7 +341,7 @@
   },
   "networks": {},
   "schemaVersion": "3.0.16",
-  "updatedAt": "2019-11-20T12:52:42.798Z",
+  "updatedAt": "2019-11-22T15:01:16.734Z",
   "devdoc": {
     "methods": {}
   },

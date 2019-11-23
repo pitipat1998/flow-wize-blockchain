@@ -1,6 +1,8 @@
 pragma solidity ^0.5.0;
 
-contract LoanRequest {
+import "./DGToken.sol";
+
+contract LoanRequest is DGToken {
 
   event RegisterRequester(address indexed requester);
   event RequestLoan(address indexed requester, uint256 requestId, string loanType, uint256 amount);
@@ -18,26 +20,26 @@ contract LoanRequest {
         bool isActive;
         uint256 timestamp;
   }
-  
+
   modifier isRequester() {
       require(requesters[msg.sender].exists == true);
       _;
   }
-  
+
   modifier isMyRequest(uint256 id) {
       require(requests[id].requester == msg.sender);
       _;
   }
-  
+
   mapping(address => Requester) internal requesters;
   LRequest[] internal requests;
-  
+
   function registerRequester() external returns(bool) {
       requesters[msg.sender].exists = true;
       emit RegisterRequester(msg.sender);
       return true;
   }
-  
+
   function requestLoan(string calldata loanType, uint256 amount) external isRequester returns(uint256) {
       LRequest memory lRequest = LRequest(msg.sender, loanType, amount , true, now);
       uint256 id = requests.push(lRequest) - 1;
@@ -60,7 +62,7 @@ contract LoanRequest {
   function numOfAllRequests() external view returns(uint256){
       return requests.length;
   }
-  function requestAt(uint256 id) external view returns(address, string memory, uint256, bool, uint256){
-      return (requests[id].requester, requests[id].loanType, requests[id].amount, requests[id].isActive, requests[id].timestamp);
+  function requestAt(uint256 id) external view returns(uint256, address, string memory, uint256, bool, uint256){
+      return (id, requests[id].requester, requests[id].loanType, requests[id].amount, requests[id].isActive, requests[id].timestamp);
   }
 }

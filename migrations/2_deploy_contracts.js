@@ -1,7 +1,5 @@
-var DGToken = artifacts.require("DGToken");
-var LoanRequest = artifacts.require("LoanRequest");
+var Action = artifacts.require("Action");
 
 module.exports = function(deployer) {
-    deployer.deploy(DGToken);
-    deployer.deploy(LoanRequest);
+    deployer.deploy(Action);
 };
