@@ -1,5 +1,3 @@
-pragma solidity ^0.5.0;
-
 import "./IERC20.sol";
 import "./IDGToken.sol";
 
@@ -10,6 +8,11 @@ contract DGToken is IERC20, IDGToken {
     address public minter;
     uint256 fee = 20000;
 
+    modifier isOwner() {
+        require(msg.sender == minter);
+        _;
+    }
+    
     function totalSupply() public view returns (uint256) {
         return _totalSupply;
     }
